@@ -56,9 +56,17 @@
       ]
     }
   ],
-  "post-processors": ["vagrant"],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "compression_level": "{{user `vagrant_box_compression_level`}}",
+      "output": "{{user `vagrant_box_name`}}"
+    }
+  ],
   "variables": {
     "compression_level": "9",
+    "vagrant_box_compression_level": "9",
+    "vagrant_box_name": "CentOS-7-x86_64-1511.box",
     "cpus": "1",
     "disk_size": "20480",
     "headless": "false",
